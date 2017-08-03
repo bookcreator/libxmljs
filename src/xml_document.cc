@@ -189,9 +189,9 @@ NAN_METHOD(XmlDocument::ToString)
 
         // choose encoding declaration
         v8::Local<v8::Value> encodingOpt = obj->Get(Nan::New<v8::String>("encoding").ToLocalChecked());
-		v8::String::Utf8Value encoding_(encodingOpt->ToString());
         if (encodingOpt->IsString()) {
-    		encoding = *encoding_;
+            v8::String::Utf8Value encoding_(encodingOpt->ToString());
+            encoding = *encoding_;
         }
 
         // drop the xml declaration
